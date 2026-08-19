@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agritech & Farming Services — Stackly Agri</title>
+  <meta name="description" content="Explore Stackly Agri services: IoT soil monitoring, cold-chain transport, satellite crop diagnostics, and blockchain farm-to-table traceability." />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <style>
+    .services-page {
+      padding-top: 130px;
+      padding-bottom: 6rem;
+      background: #050d0a;
+    }
+    .service-hero-head {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 4rem;
+    }
+    .service-hero-head h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .service-hero-head p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+    }
+    .services-grid-large {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 5rem;
+    }
+    .s-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+    .s-card:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card), var(--shadow-glow);
+    }
+    .s-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+    .s-card-body {
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .s-card-body h3 {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 0.85rem;
+    }
+    .s-card-body p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .s-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      margin-top: auto;
+    }
+    .s-features-list li {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .s-features-list li i {
+      color: var(--accent-mint);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP READING SCROLL PROGRESS BAR -->
+  <div id="scrollProgress"></div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="images/logoStackly.webp" alt="Stackly Agri Logo" height="45" style="filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="track.html">Track Harvest</a></li>
+      <li><a class="active" href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-amber" href="login.html">🔐 Portal Login</a>
+      <button class="burger" id="burger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE SCRIM & DRAWER -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer">
+    <a class="d-link" href="index.html">🏠 Home</a>
+    <a class="d-link" href="track.html">📍 Track Harvest</a>
+    <a class="d-link active" href="services.html">🌱 Agri Services</a>
+    <a class="d-link" href="pricing.html">💰 Plans & Pricing</a>
+    <a class="d-link" href="contact.html">✉️ Contact Us</a>
+
+    <a class="btn btn-amber drawer-login" href="login.html">🔐 Portal Login</a>
+  </aside>
+
+  <!-- SERVICES MAIN -->
+  <main class="services-page">
+    <div class="wrap">
+      
+      <div class="service-hero-head reveal">
+        <span class="eyebrow pill-emerald">End-To-End Agritech Ecosystem</span>
+        <h1>Precision Solutions for Modern Agriculture</h1>
+        <p>From seed planting and soil microclimate telemetry to active cold-chain freight and buyer marketplace connectivity.</p>
+      </div>
+
+      <div class="services-grid-large">
+
+        <!-- SERVICE 1 -->
+        <article class="s-card reveal left">
+          <img src="images/tech.jpg" alt="Precision Greenhouse & Hydroponics" />
+          <div class="s-card-body">
+            <span class="eyebrow pill-emerald" style="width: max-content;">IoT & Microclimate</span>
+            <h3>Precision Farming & Hydroponic Telemetry</h3>
+            <p>Deploy wireless soil sensors and canopy monitors that log moisture, nitrogen levels, and humidity in real time directly to your Stackly Agri dashboard.</p>
+            <ul class="s-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> Wireless multi-depth soil moisture probes</li>
+              <li><i class="fa-solid fa-circle-check"></i> Automated micro-irrigation controller integration</li>
+              <li><i class="fa-solid fa-circle-check"></i> Frost warning & solar irradiance alerts</li>
+            </ul>
+            <a href="contact.html" class="btn btn-emerald">Inquire IoT Deployment →</a>
+          </div>
+        </article>
+
+        <!-- SERVICE 2 -->
+        <article class="s-card reveal right">
+          <img src="images/global.jpg" alt="Cold-Chain Transport Vehicles" />
+          <div class="s-card-body">
+            <span class="eyebrow pill-amber" style="width: max-content;">Cold-Chain Freight</span>
+            <h3>Refrigerated Farm-to-Table Fleet GPS</h3>
+            <p>Protect perishable crops with GPS-tracked temperature-controlled transport. Monitor cargo heat, humidity, and door-opening logs continuously.</p>
+            <ul class="s-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> Active cold-storage temperature telemetry (0°C to 15°C)</li>
+              <li><i class="fa-solid fa-circle-check"></i> Automatic reefer unit fail-safe notifications</li>
+              <li><i class="fa-solid fa-circle-check"></i> Optimized harvest-to-market route planning</li>
+            </ul>
+            <a href="track.html" class="btn btn-amber">View Live Fleet Telemetry →</a>
+          </div>
+        </article>
+
+        <!-- SERVICE 3 -->
+        <article class="s-card reveal left">
+          <img src="images/hero.jpg" alt="Drone Crop Scouting & Satellite Telemetry" />
+          <div class="s-card-body">
+            <span class="eyebrow pill-teal" style="width: max-content;">Aerial Analytics</span>
+            <h3>Satellite & Multispectral Drone Scouting</h3>
+            <p>Scan high-density acreage with autonomous drones and high-resolution satellite spectral indices (NDVI) to detect crop stress before visual symptoms show.</p>
+            <ul class="s-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> Weekly NDVI vegetation health mapping</li>
+              <li><i class="fa-solid fa-circle-check"></i> Pest and weed infestation hotspot pinpointing</li>
+              <li><i class="fa-solid fa-circle-check"></i> AI crop yield forecasting and biomass estimation</li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Schedule Drone Scouting →</a>
+          </div>
+        </article>
+
+        <!-- SERVICE 4 -->
+        <article class="s-card reveal right">
+          <img src="images/global.jpg" alt="Blockchain Traceability & Quality Lab" />
+          <div class="s-card-body">
+            <span class="eyebrow pill-emerald" style="width: max-content;">Blockchain Provenance</span>
+            <h3>Organic Certification & Traceability</h3>
+            <p>Provide buyers and consumers with QR-code verifiable farm origin records, pesticide residue testing logs, and organic compliance certificates.</p>
+            <ul class="s-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> Tamper-proof blockchain batch birth certificates</li>
+              <li><i class="fa-solid fa-circle-check"></i> Consumer QR code scanning for brand transparency</li>
+              <li><i class="fa-solid fa-circle-check"></i> Automated export compliance and customs docs</li>
+            </ul>
+            <a href="contact.html" class="btn btn-emerald">Get Blockchain Certified →</a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logoStackly.webp" alt="Stackly Agri" height="42" style="filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+          <p>Stackly Agri empowers farmers and distributors with real-time crop telemetry and transparent cold-chain logistics.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="track.html">Live Harvest Tracker</a></li>
+            <li><a href="services.html">Farm Solutions</a></li>
+            <li><a href="pricing.html">Plans & Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Support</h4>
+          <ul>
+            <li><a href="contact.html">Deploy Telemetry</a></li>
+            <li><a href="contact.html">Request Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Helpline</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">+1 (800) 555-AGRI</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Stackly Agri Technologies Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+</body>
+</html>

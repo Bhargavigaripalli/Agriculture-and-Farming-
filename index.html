@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stackly — Smart Agriculture & Farm Supply Intelligence Platform</title>
+  <meta name="description" content="Stackly Agri is a real-time smart farming, crop telemetry, cold-chain logistics, and farm-to-table tracking platform." />
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <!-- TOP READING SCROLL PROGRESS BAR -->
+  <div id="scrollProgress"></div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="images/logoStackly.webp" alt="Stackly Agri Logo" height="45" style="filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+    </a>
+    <ul class="nav-links">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="track.html">Track Harvest</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-amber" href="login.html">🔐 Portal Login</a>
+      <button class="burger" id="burger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE SCRIM & DRAWER -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer">
+    <a class="d-link active" href="index.html">🏠 Home</a>
+    <a class="d-link" href="track.html">📍 Track Harvest</a>
+    <a class="d-link" href="services.html">🌱 Agri Services</a>
+    <a class="d-link" href="pricing.html">💰 Plans & Pricing</a>
+    <a class="d-link" href="contact.html">✉️ Contact Us</a>
+
+    <a class="btn btn-amber drawer-login" href="login.html">🔐 Portal Login</a>
+
+    <!-- DRAWER CONTACT DETAILS -->
+    <div class="drawer-contact">
+      <div class="drawer-contact-title">Contact Agritech Hub</div>
+      <a href="mailto:support@stacklyagri.com" class="drawer-contact-item">
+        <span class="drawer-contact-icon"><i class="fa-regular fa-envelope"></i></span>
+        <div>
+          <small>Support Email</small>
+          <strong>support@stacklyagri.com</strong>
+        </div>
+      </a>
+      <a href="tel:+18005552474" class="drawer-contact-item">
+        <span class="drawer-contact-icon"><i class="fa-solid fa-phone"></i></span>
+        <div>
+          <small>Toll Free Helpline</small>
+          <strong>+1 (800) 555-AGRI</strong>
+        </div>
+      </a>
+      <div class="drawer-contact-item">
+        <span class="drawer-contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+        <div>
+          <small>Headquarters</small>
+          <strong>Agritech Valley, CA, USA</strong>
+        </div>
+      </div>
+    </div>
+    <p class="d-note">⚡ Live telemetry response in under 2 mins</p>
+  </aside>
+
+  <!-- 1. HERO SECTION WITH PARTICLES & CAROUSEL -->
+  <header class="hero">
+    <!-- BIO-LUMINESCENT PARTICLE CANVAS BACKDROP -->
+    <canvas id="heroCanvas"></canvas>
+
+    <div class="hero-blob b1"></div>
+    <div class="hero-blob b2"></div>
+    
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <span class="eyebrow pill-amber">
+          <span class="live-dot"></span> Live Agri-Network Status: Optimal
+        </span>
+        <h1>Every crop & harvest,<br /><em>tracked</em> in real time.</h1>
+        <p>
+          Stackly plugs into your smart fields, cold-chain fleets, and distribution hubs to answer the one critical question — 
+          <strong>where is your fresh produce & what is its exact quality score?</strong>
+        </p>
+        
+        <div class="hero-btns">
+          <a href="track.html" class="btn btn-emerald">Track Harvest Batch →</a>
+          <a href="services.html" class="btn btn-ghost">Explore Farm Solutions</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <b data-count="14.8" data-suffix="M">0</b>
+            <small>Tons Harvested/Yr</small>
+          </div>
+          <div>
+            <b data-count="94" data-suffix=" Hubs">0</b>
+            <small>Cold-Chain Terminals</small>
+          </div>
+          <div>
+            <b data-count="99.8" data-suffix="%">0</b>
+            <small>Freshness Guarantee</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-art-frame">
+          <img id="heroImg" src="images/hero.jpg" alt="Autonomous Smart Agriculture Field" />
+        </div>
+        
+        <!-- CAROUSEL INDICATOR DOTS -->
+        <div class="hero-carousel-nav" id="heroCarouselDots"></div>
+
+        <div class="float-card fc1">
+          <span class="live-dot"></span> Soil Moisture Optimal · 42% RH
+        </div>
+        <div class="float-card fc2">
+          📦 #AGRI-88210 · In Cold Transit
+        </div>
+        <div class="radar-ping"></div>
+      </div>
+    </div>
+
+    <!-- MARQUEE RUNNING TICKER -->
+    <div class="marquee">
+      <div class="mq-track">
+        <span>🌱 PRECISION SMART FARMING</span>
+        <span>❄️ COLD-CHAIN TELEMETRY</span>
+        <span>🛰️ SATELLITE SOIL MONITORING</span>
+        <span>🚜 AUTONOMOUS FLEET LOGISTICS</span>
+        <span>🍏 FARM-TO-TABLE TRACEABILITY</span>
+        <span>⚡ INSTANT MARKETMATCH</span>
+        <span>🌱 PRECISION SMART FARMING</span>
+        <span>❄️ COLD-CHAIN TELEMETRY</span>
+        <span>🛰️ SATELLITE SOIL MONITORING</span>
+        <span>🚜 AUTONOMOUS FLEET LOGISTICS</span>
+        <span>🍏 FARM-TO-TABLE TRACEABILITY</span>
+        <span>⚡ INSTANT MARKETMATCH</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. QUICK TRACK SECTION -->
+  <section class="sec-quick">
+    <div class="wrap">
+      <div class="quick-box reveal zoom">
+        <div class="qb-left">
+          <h2>Quick Produce Lookup</h2>
+          <p>Enter any crop batch or refrigerated container ID to inspect real-time freshness telemetry and GPS location.</p>
+        </div>
+        <form class="qb-form" id="quickForm">
+          <input type="text" id="quickId" placeholder="e.g. AGRI-88210" autocomplete="off" />
+          <button class="btn btn-emerald" type="submit">Track Now →</button>
+        </form>
+      </div>
+      <p class="qb-hint">
+        Try sample IDs: 
+        <b onclick="window.location.href='track.html?id=AGRI-88210'">AGRI-88210</b>, 
+        <b onclick="window.location.href='track.html?id=CROP-99412'">CROP-99412</b> or 
+        <b onclick="window.location.href='track.html?id=FARM-33104'">FARM-33104</b>
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. INTERACTIVE TABBED SHOWCASE GALLERY -->
+  <section class="sec-gallery">
+    <div class="wrap">
+      <div class="head-c reveal">
+        <span class="eyebrow pill-teal">Interactive Tech Showcase</span>
+        <h2>Explore Stackly's <span>Agri-Telemetry Ecosystem</span></h2>
+        <p>Switch between interactive modules to view how telemetry flows from sensor to warehouse.</p>
+      </div>
+
+      <div class="gallery-tabs reveal">
+        <button class="gallery-tab active" type="button">🌱 Hydroponics & Soil</button>
+        <button class="gallery-tab" type="button">🚚 Cold Fleet Logistics</button>
+        <button class="gallery-tab" type="button">🚜 Autonomous Scouting</button>
+      </div>
+
+      <div class="gallery-display reveal zoom">
+        <img id="galleryImg" src="images/tech.jpg" alt="Hydroponics & Soil Telemetry" />
+        <div class="gallery-info">
+          <h3 id="galleryTitle">Hydroponics & Soil Telemetry</h3>
+          <p id="galleryDesc">
+            Wireless sensors monitor soil matrix potential, NPK values, and ambient air moisture 24/7 to adjust hydroponic micro-nutrients automatically.
+          </p>
+          <a href="services.html" class="btn btn-emerald">Explore Solutions →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. GLOBAL AGRI INTELLIGENCE SECTION -->
+  <section class="home-global">
+    <div class="wrap home-global-inner">
+      <div class="home-global-content reveal left">
+        <span class="eyebrow pill-emerald">Global Farm Intelligence</span>
+        <h2>Connected Farmlands.<br /><span>Zero Spoilage Journey.</span></h2>
+        <p>
+          Stackly unites local growers, logistics operators, cold storages, and wholesale buyers into one transparent ecosystem. 
+          Prevent spoilage before microclimate shifts impact your yield.
+        </p>
+
+        <div class="global-features">
+          <div class="global-feature">
+            <span class="gf-icon">🛰️</span>
+            <div>
+              <h3>IoT Soil & Microclimate Signals</h3>
+              <p>Real-time ground sensors stream soil pH, moisture, and temperature continuously.</p>
+            </div>
+          </div>
+
+          <div class="global-feature">
+            <span class="gf-icon">❄️</span>
+            <div>
+              <h3>Active Cold-Chain Monitoring</h3>
+              <p>GPS tracked refrigerated vans maintain strict temperature thresholds from harvest to store shelf.</p>
+            </div>
+          </div>
+
+          <div class="global-feature">
+            <span class="gf-icon">⚡</span>
+            <div>
+              <h3>Predictive Harvest Analytics</h3>
+              <p>AI algorithms forecast yield dates and market demand spikes to maximize crop profit margins.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="track.html" class="btn btn-amber">Launch Live Telemetry →</a>
+      </div>
+
+      <div class="home-global-visual reveal right">
+        <div class="global-image-card">
+          <img src="images/global.jpg" alt="Agricultural Logistics Network" />
+          <div class="global-status">
+            <div class="status-top"><span class="live-dot"></span> Network Live</div>
+            <strong>38,940 Tons</strong>
+            <span>Active Produce Moving Today</span>
+          </div>
+          <div class="global-location location-one"><span></span> Valley Farm Hub</div>
+          <div class="global-location location-two"><span></span> Cold Storage Facility</div>
+          <div class="global-location location-three"><span></span> Port Terminal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CORE FEATURES (WHY STACKLY AGRI WITH 3D TILT) -->
+  <section class="sec-features">
+    <div class="wrap">
+      <div class="head-c reveal">
+        <span class="eyebrow pill-teal">Why Stackly Agri</span>
+        <h2>Built for modern farmers who demand <span>uncompromising precision</span></h2>
+        <p>Six unified tech layers that turn guesswork into guaranteed fresh deliveries.</p>
+      </div>
+
+      <div class="feat-grid">
+        <article class="feat reveal left">
+          <div class="fi">🛰️</div>
+          <h3>IoT Telemetry Pulse</h3>
+          <p>Sensor telemetry streamed every 10 seconds mapping soil moisture, solar radiance, and canopy index directly to your phone.</p>
+          <span class="fnum">01</span>
+        </article>
+
+        <article class="feat reveal">
+          <div class="fi">🚜</div>
+          <h3>Fleet & Tractor GPS</h3>
+          <p>Autonomous tractor guidance and transport vehicle routing tuned to optimize fuel consumption and transit time.</p>
+          <span class="fnum">02</span>
+        </article>
+
+        <article class="feat reveal right">
+          <div class="fi">❄️</div>
+          <h3>Cold-Chain Safeguard</h3>
+          <p>Automated alerts notify drivers and operators if storage temperature drifts beyond 0.5°C tolerance levels.</p>
+          <span class="fnum">03</span>
+        </article>
+
+        <article class="feat reveal left">
+          <div class="fi">📜</div>
+          <h3>Blockchain Provenance</h3>
+          <p>Cryptographically verified origin certificates giving consumers 100% confidence in organic and fair-trade compliance.</p>
+          <span class="fnum">04</span>
+        </article>
+
+        <article class="feat reveal">
+          <div class="fi">🧠</div>
+          <h3>AI Yield Predictor</h3>
+          <p>Predict optimal harvest windows up to 14 days in advance using satellite spectral index imagery and historical weather models.</p>
+          <span class="fnum">05</span>
+        </article>
+
+        <article class="feat reveal right">
+          <div class="fi">🤝</div>
+          <h3>Direct Buyer Marketplace</h3>
+          <p>Bypass redundant middlemen and trade produce directly with accredited wholesalers, supermarkets, and food processors.</p>
+          <span class="fnum">06</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. INTERACTIVE CROP YIELD & ROI CALCULATOR -->
+  <section class="sec-calc">
+    <div class="wrap">
+      <div class="calc-box reveal zoom">
+        <div class="calc-inputs">
+          <span class="eyebrow pill-amber">Interactive ROI Simulator</span>
+          <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 1rem;">Calculate Your Farm Savings</h2>
+          <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem;">
+            See how much revenue Stackly Agri preserves by eliminating harvest spoilage and optimizing cold-chain logistics.
+          </p>
+
+          <div class="input-group">
+            <label>Cultivated Land Area: <span id="acresVal">100 Acres</span></label>
+            <input type="range" class="range-slider" id="calcAcres" min="10" max="1000" step="10" value="100" />
+          </div>
+
+          <div class="input-group">
+            <label>Current Estimated Spoilage Loss: <span id="lossVal">15%</span></label>
+            <input type="range" class="range-slider" id="calcLoss" min="5" max="35" step="1" value="15" />
+          </div>
+        </div>
+
+        <div class="calc-output">
+          <div>
+            <span style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+              Estimated Preserved Revenue
+            </span>
+            <div class="out-val" id="roiOutput">$27,000 / yr</div>
+            <p style="font-size: 0.88rem; color: var(--accent-mint); font-weight: 600;">
+              ✓ Based on 75% spoilage reduction with IoT telemetry
+            </p>
+          </div>
+          <a href="pricing.html" class="btn btn-emerald" style="width: 100%; margin-top: 1.5rem;">Choose Agri Plan →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logoStackly.webp" alt="Stackly Agri" height="42" style="filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+          <p>
+            Stackly is the premier real-time intelligence & tracking platform for smart farming, cold-chain transport, and fresh produce supply networks.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="track.html">Live Harvest Tracker</a></li>
+            <li><a href="services.html">Farm Solutions</a></li>
+            <li><a href="pricing.html">Plans & Pricing</a></li>
+            <li><a href="login.html">Farmer Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Agri Solutions</h4>
+          <ul>
+            <li><a href="services.html">Soil IoT Sensors</a></li>
+            <li><a href="services.html">Cold-Chain Fleet GPS</a></li>
+            <li><a href="services.html">Drone Crop Diagnostics</a></li>
+            <li><a href="services.html">Organic Blockchain</a></li>
+            <li><a href="services.html">Marketplace Connect</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Agritech Insights</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+            Subscribe to our weekly smart farming intelligence bulletin.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to Agri Newsletter!');">
+            <input type="email" placeholder="Enter your email" required />
+            <button class="btn btn-emerald" type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Stackly Agri Technologies Inc. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security Audit</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT FILES -->
+  <script src="js/common.js"></script>
+  <script src="js/track.js"></script>
+</body>
+</html>

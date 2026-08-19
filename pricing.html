@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plans & Pricing — Stackly Agri</title>
+  <meta name="description" content="Flexible, transparent pricing plans for small farmers, agritech hubs, and global produce exporters." />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <style>
+    .pricing-page {
+      padding-top: 130px;
+      padding-bottom: 6rem;
+      background: #050d0a;
+    }
+    .pricing-hero {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+    .pricing-hero h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .pricing-hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+    }
+    .pricing-toggle-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+    .toggle-switch {
+      position: relative;
+      width: 60px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      padding: 3px;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+    }
+    .toggle-switch .handle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-mint);
+      transition: transform var(--transition-fast);
+    }
+    .toggle-switch.annual .handle {
+      transform: translateX(28px);
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 6rem;
+    }
+    .p-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.8rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition-normal);
+    }
+    .p-card.featured {
+      background: rgba(16, 185, 129, 0.08);
+      border-color: var(--accent-mint);
+      box-shadow: var(--shadow-card), 0 0 35px rgba(16, 185, 129, 0.2);
+      transform: translateY(-10px);
+    }
+    .popular-tag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-mint);
+      color: #050d0a;
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: var(--radius-pill);
+      letter-spacing: 1px;
+    }
+    .p-card h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .p-card .p-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .p-price {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+    .p-price span {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .p-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2.5rem;
+      margin-top: auto;
+    }
+    .p-features li {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .p-features li i {
+      color: var(--accent-mint);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="images/logoStackly.webp" alt="Stackly Agri Logo" height="45" style="filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="track.html">Track Harvest</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a class="active" href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-amber" href="login.html">🔐 Portal Login</a>
+      <button class="burger" id="burger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE SCRIM & DRAWER -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer">
+    <a class="d-link" href="index.html">🏠 Home</a>
+    <a class="d-link" href="track.html">📍 Track Harvest</a>
+    <a class="d-link" href="services.html">🌱 Agri Services</a>
+    <a class="d-link active" href="pricing.html">💰 Plans & Pricing</a>
+    <a class="d-link" href="contact.html">✉️ Contact Us</a>
+
+    <a class="btn btn-amber drawer-login" href="login.html">🔐 Portal Login</a>
+  </aside>
+
+  <!-- PRICING MAIN -->
+  <main class="pricing-page">
+    <div class="wrap">
+      
+      <div class="pricing-hero reveal">
+        <span class="eyebrow pill-emerald">Simple & Transparent Pricing</span>
+        <h1>Predictable Investment for Every Acre</h1>
+        <p>Choose the right telemetry and tracking tier for your farm, cooperative, or global export logistics network.</p>
+      </div>
+
+      <!-- BILLING TOGGLE -->
+      <div class="pricing-toggle-wrap reveal">
+        <span style="font-weight: 600; color: var(--text-main);">Monthly Billing</span>
+        <div class="toggle-switch" id="billingToggle" onclick="toggleBilling()">
+          <div class="handle"></div>
+        </div>
+        <span style="font-weight: 600; color: var(--text-main);">
+          Annual Billing <span class="eyebrow pill-amber" style="margin-left: 0.5rem; margin-bottom: 0;">Save 20%</span>
+        </span>
+      </div>
+
+      <!-- PRICING CARDS -->
+      <div class="pricing-grid">
+
+        <!-- PLAN 1 -->
+        <article class="p-card reveal left">
+          <h3>Starter Farmer</h3>
+          <p class="p-desc">Ideal for small farms & local growers monitoring soil microclimate and local transport.</p>
+          <div class="p-price">
+            <span class="currency">$</span><span class="amount" data-monthly="49" data-annual="39">49</span><span>/ mo</span>
+          </div>
+          <ul class="p-features">
+            <li><i class="fa-solid fa-circle-check"></i> Up to 50 Acres Telemetry Coverage</li>
+            <li><i class="fa-solid fa-circle-check"></i> 5 IoT Soil Probes Integration</li>
+            <li><i class="fa-solid fa-circle-check"></i> Real-Time SMS & Email Alerts</li>
+            <li><i class="fa-solid fa-circle-check"></i> Mobile App & Dashboard Access</li>
+            <li><i class="fa-solid fa-circle-check"></i> Basic Harvest Batch Tracking</li>
+          </ul>
+          <a href="login.html" class="btn btn-ghost" style="width: 100%;">Start 14-Day Free Trial</a>
+        </article>
+
+        <!-- PLAN 2 (FEATURED) -->
+        <article class="p-card featured reveal zoom">
+          <div class="popular-tag">⚡ Most Popular Choice</div>
+          <h3>Commercial Hub</h3>
+          <p class="p-desc">For growing agritech cooperatives, cold storages, and regional crop logistics fleets.</p>
+          <div class="p-price">
+            <span class="currency">$</span><span class="amount" data-monthly="149" data-annual="119">149</span><span>/ mo</span>
+          </div>
+          <ul class="p-features">
+            <li><i class="fa-solid fa-circle-check"></i> Up to 500 Acres Telemetry Coverage</li>
+            <li><i class="fa-solid fa-circle-check"></i> 25 IoT Soil & Canopy Probes</li>
+            <li><i class="fa-solid fa-circle-check"></i> 10 Cold-Chain Reefer Vehicles GPS</li>
+            <li><i class="fa-solid fa-circle-check"></i> Satellite NDVI Vegetation Scouting</li>
+            <li><i class="fa-solid fa-circle-check"></i> Blockchain Quality Certificates</li>
+            <li><i class="fa-solid fa-circle-check"></i> Priority 24/7 Phone Support</li>
+          </ul>
+          <a href="login.html" class="btn btn-emerald" style="width: 100%;">Get Started Now →</a>
+        </article>
+
+        <!-- PLAN 3 -->
+        <article class="p-card reveal right">
+          <h3>Global Enterprise</h3>
+          <p class="p-desc">For multi-farm agricultural enterprises, food processors, and international exporters.</p>
+          <div class="p-price">
+            <span class="currency">$</span><span class="amount" data-monthly="399" data-annual="319">399</span><span>/ mo</span>
+          </div>
+          <ul class="p-features">
+            <li><i class="fa-solid fa-circle-check"></i> Unlimited Acres & Field Coverage</li>
+            <li><i class="fa-solid fa-circle-check"></i> Unlimited IoT Sensor Telemetry</li>
+            <li><i class="fa-solid fa-circle-check"></i> Unlimited Cold-Chain Truck & Port Tracking</li>
+            <li><i class="fa-solid fa-circle-check"></i> Custom AI Yield Forecast Models</li>
+            <li><i class="fa-solid fa-circle-check"></i> Dedicated Agritech Account Manager</li>
+            <li><i class="fa-solid fa-circle-check"></i> Enterprise API & Webhook Integration</li>
+          </ul>
+          <a href="contact.html" class="btn btn-amber" style="width: 100%;">Contact Enterprise Sales</a>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logoStackly.webp" alt="Stackly Agri" height="42" style="filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+          <p>Stackly Agri empowers farmers and distributors with real-time crop telemetry and transparent cold-chain logistics.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="track.html">Live Harvest Tracker</a></li>
+            <li><a href="services.html">Farm Solutions</a></li>
+            <li><a href="pricing.html">Plans & Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">FAQ & Help Desk</a></li>
+            <li><a href="contact.html">Hardware Calibration</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Helpline</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">+1 (800) 555-AGRI</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Stackly Agri Technologies Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script>
+    function toggleBilling() {
+      const toggle = document.getElementById('billingToggle');
+      const isAnnual = toggle.classList.toggle('annual');
+      const amounts = document.querySelectorAll('.amount');
+      
+      amounts.forEach(el => {
+        const val = isAnnual ? el.getAttribute('data-annual') : el.getAttribute('data-monthly');
+        el.textContent = val;
+      });
+
+      showToast(isAnnual ? 'Switched to Annual Billing (20% Savings Applied)' : 'Switched to Monthly Billing');
+    }
+  </script>
+</body>
+</html>
