@@ -195,9 +195,9 @@ function initHeroCarousel() {
   if (!heroImg || !dotsNav) return;
 
   const images = [
-    'images/hero.jpg',
-    'images/global.jpg',
-    'images/tech.jpg'
+    'images/hero_11zon.webp',
+    'images/global_11zon.webp',
+    'images/tech_11zon.webp'
   ];
 
   let currentIndex = 0;
@@ -243,17 +243,17 @@ function initGalleryTabs() {
 
   const galleryData = [
     {
-      img: 'images/tech.jpg',
+      img: 'images/tech_11zon.webp',
       title: 'Hydroponics & Soil Telemetry',
       desc: 'Wireless sensors monitor soil matrix potential, NPK values, and ambient air moisture 24/7 to adjust hydroponic micro-nutrients automatically.'
     },
     {
-      img: 'images/global.jpg',
+      img: 'images/global_11zon.webp',
       title: 'Refrigerated Fleet GPS Corridor',
       desc: 'Every container is linked to satellite telematics, maintaining exact temperature tolerance from rural farm gates to international ports.'
     },
     {
-      img: 'images/hero.jpg',
+      img: 'images/hero_11zon.webp',
       title: 'Autonomous Tractor Scouting',
       desc: 'Laser-guided tractors and multispectral drones scan every crop row to detect early pest threats and calculate exact biomass index.'
     }

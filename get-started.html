@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — Stackly Agri</title>
+  <meta name="description" content="Register your account to access Stackly Agri telemetry platform." />
+  <link rel="icon" type="image/webp" href="images/logoStackly.webp" />
+  
+  <!-- FontAwesome & CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #030806;
+    }
+    .auth-section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      background: radial-gradient(circle at 50% 40%, rgba(16, 185, 129, 0.12) 0%, rgba(3, 8, 6, 1) 75%);
+      box-sizing: border-box;
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 480px;
+      background: rgba(10, 24, 18, 0.85);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      border-radius: var(--radius-lg, 24px);
+      backdrop-filter: blur(20px);
+      padding: 2.5rem;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
+      box-sizing: border-box;
+    }
+    
+    /* CENTERED LOGO WRAPPER */
+    .auth-logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 1.25rem;
+      width: 100%;
+    }
+    .auth-header {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+    .auth-header h2 {
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+    .auth-header p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+    .auth-form .f-group {
+      margin-bottom: 1.25rem;
+    }
+    .auth-form label {
+      display: block;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .auth-form input, .auth-form select {
+      width: 100%;
+      background: rgba(5, 13, 10, 0.8);
+      border: 1px solid var(--border-color);
+      padding: 0.9rem 1.2rem;
+      border-radius: var(--radius-md);
+      color: #ffffff;
+      font-size: 0.98rem;
+      box-sizing: border-box;
+    }
+    .auth-form input:focus, .auth-form select:focus {
+      border-color: var(--accent-mint);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+      outline: none;
+    }
+    
+    /* WARNING BOX FOR PASSWORD MISMATCH */
+    .password-warning-box {
+      display: none;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #f87171;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .auth-footer-link {
+      text-align: center;
+      margin-top: 1.8rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .auth-footer-link a {
+      color: var(--accent-mint);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .auth-footer-link a:hover {
+      text-decoration: underline;
+    }
+    .btn-back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-color);
+      color: #ffffff !important;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      text-decoration: none !important;
+    }
+    .btn-back-home:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AUTH MAIN CONTENT (NO NAVBAR) -->
+  <section class="auth-section">
+    <div class="auth-card">
+      
+      <!-- CENTERED LOGO MATCHING FOOTER SIZE (38PX) -->
+      <div class="auth-logo-wrap">
+        <a href="index.html">
+          <img src="images/logoStackly.webp" alt="Stackly Agri Logo" height="38" style="height: 38px; display: block; margin: 0 auto; filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+        </a>
+      </div>
+      
+      <div class="auth-header">
+        <h2>Create Your Account</h2>
+        <p>Join Stackly Agri platform for live telemetry and crop tracking.</p>
+      </div>
+
+      <!-- PASSWORD MISMATCH ALERT BOX -->
+      <div id="passWarning" class="password-warning-box">
+        <i class="fa-solid fa-triangle-exclamation"></i> Warning: Password and Confirm Password do not match!
+      </div>
+
+      <form class="auth-form" id="registerForm" onsubmit="handleRegisterSubmit(event)">
+        
+        <!-- FULL NAME: ALPHABETS ONLY, MAX 16 CHARS -->
+        <div class="f-group">
+          <label>Full Name</label>
+          <input 
+            type="text" 
+            id="regName"
+            placeholder="e.g. Robert Miller" 
+            pattern="[A-Za-z\s]{1,16}" 
+            maxlength="16" 
+            oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').slice(0, 16);" 
+            title="Only alphabets allowed (maximum 16 letters)" 
+            required 
+          />
+        </div>
+
+        <!-- WORK EMAIL: EMAIL FORMAT -->
+        <div class="f-group">
+          <label>Work Email</label>
+          <input 
+            type="email" 
+            id="regEmail"
+            placeholder="robert@greenvalley.com" 
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+            title="Please enter a valid email address (e.g. name@domain.com)"
+            required 
+          />
+        </div>
+
+        <!-- STRONG PASSWORD WITH EYE MASK TOGGLE -->
+        <div class="f-group">
+          <label>Password</label>
+          <div style="position: relative;">
+            <input 
+              type="password" 
+              id="regPassword" 
+              placeholder="••••••••••••" 
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+              title="Strong password required: at least 8 characters with 1 uppercase, 1 lowercase, 1 number, and 1 special character."
+              style="padding-right: 45px;"
+              required 
+            />
+            <button type="button" class="pwd-toggle-btn" onclick="togglePasswordVisibility('regPassword', this)" aria-label="Toggle Password Visibility" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 5px; font-size: 1.1rem;">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+          <small style="color: var(--text-dim); font-size: 0.78rem; display: block; margin-top: 4px;">
+            🔒 Must contain 8+ chars, 1 uppercase, 1 lowercase, 1 number & 1 special char.
+          </small>
+        </div>
+
+        <!-- CONFIRM PASSWORD WITH EYE MASK TOGGLE -->
+        <div class="f-group">
+          <label>Confirm Password</label>
+          <div style="position: relative;">
+            <input 
+              type="password" 
+              id="confirmPassword" 
+              placeholder="••••••••••••" 
+              style="padding-right: 45px;"
+              required 
+            />
+            <button type="button" class="pwd-toggle-btn" onclick="togglePasswordVisibility('confirmPassword', this)" aria-label="Toggle Password Visibility" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 5px; font-size: 1.1rem;">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- CREATE ACCOUNT SUBMIT BUTTON -->
+        <button type="submit" class="btn btn-emerald" style="width: 100%; padding: 0.9rem; margin-top: 0.5rem;">
+          Create Account →
+        </button>
+      </form>
+
+      <!-- FOOTER LINKS WITH BACK TO HOME BUTTON -->
+      <div class="auth-footer-link">
+        <span>Already have an account? <a href="login.html">Sign In</a></span>
+        <a href="index.html" class="btn-back-home"><i class="fa-solid fa-house"></i> Back to Home</a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/common.js"></script>
+  <script>
+    function handleRegisterSubmit(e) {
+      e.preventDefault();
+      
+      const pass = document.getElementById('regPassword').value;
+      const confirmPass = document.getElementById('confirmPassword').value;
+      const warningBox = document.getElementById('passWarning');
+
+      // CHECK IF PASSWORD AND CONFIRM PASSWORD MATCH
+      if (pass !== confirmPass) {
+        if (warningBox) warningBox.style.display = 'block';
+        showToast('⚠️ Password and Confirm Password do not match!');
+        return false;
+      }
+
+      if (warningBox) warningBox.style.display = 'none';
+
+      // SUCCESS: REDIRECT TO LOGIN PAGE
+      showToast('Account created successfully! Redirecting to Login page...');
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 700);
+    }
+
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+        btn.style.color = 'var(--accent-mint)';
+      } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+        btn.style.color = 'var(--text-muted)';
+      }
+    }
+  </script>
+</body>
+</html>

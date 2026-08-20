@@ -87,18 +87,14 @@ function initTrackingEngine() {
   if (quickForm) {
     quickForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const query = quickInput.value.trim() || 'AGRI-88210';
-      window.location.href = `track.html?id=${encodeURIComponent(query)}`;
+      window.location.href = '404.html';
     });
   }
 
   if (trackForm && trackInput) {
     trackForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const query = trackInput.value.trim();
-      if (query) {
-        renderTrackingResult(query);
-      }
+      window.location.href = '404.html';
     });
 
     // Check URL parameters for ID
@@ -244,7 +240,7 @@ function renderTrackingResult(id) {
             <strong>${data.gps}</strong>
           </div>
         </div>
-        <button class="btn btn-emerald" style="margin-top: 1.5rem; width: 100%;" onclick="showToast('Downloading Certified Produce Manifest (PDF)...')">
+        <button class="btn btn-emerald" style="margin-top: 1.5rem; width: 100%;" onclick="window.location.href='404.html'">
           📄 Download Blockchain Verification Certificate
         </button>
       </div>

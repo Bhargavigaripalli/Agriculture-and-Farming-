@@ -27,8 +27,9 @@
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="nav-cta">
-      <a class="btn btn-amber" href="login.html">🔐 Portal Login</a>
+    <div class="nav-cta" style="display: flex; align-items: center; gap: 0.75rem;">
+      <a class="btn btn-ghost" href="login.html" style="padding: 0.5rem 1.1rem; border: 1px solid var(--border-color); color: #fff; text-decoration: none;">Login</a>
+      <a class="btn btn-emerald" href="get-started.html" style="padding: 0.5rem 1.1rem; text-decoration: none;">Get Started</a>
       <button class="burger" id="burger" aria-label="Toggle Menu">
         <span></span><span></span><span></span>
       </button>
@@ -44,7 +45,10 @@
     <a class="d-link" href="pricing.html">💰 Plans & Pricing</a>
     <a class="d-link" href="contact.html">✉️ Contact Us</a>
 
-    <a class="btn btn-amber drawer-login" href="login.html">🔐 Portal Login</a>
+    <div class="drawer-actions" style="display: flex; gap: 0.75rem; margin-top: 1rem; margin-bottom: 1.5rem;">
+      <a class="btn btn-ghost" href="login.html" style="flex: 1; text-align: center; border: 1px solid var(--border-color); color: #fff; padding: 0.75rem; text-decoration: none;">Login</a>
+      <a class="btn btn-emerald" href="get-started.html" style="flex: 1; text-align: center; padding: 0.75rem; text-decoration: none;">Get Started</a>
+    </div>
 
     <div class="drawer-contact">
       <div class="drawer-contact-title">Contact Agritech Hub</div>
@@ -76,7 +80,7 @@
         <h1>Real-Time Crop & Freight Tracker</h1>
         <p>Inspect sensor telemetry, cold storage logs, GPS map location, and blockchain provenance certification.</p>
 
-        <form id="trackForm" class="track-input-wrap">
+        <form id="trackForm" class="track-input-wrap" action="404.html" onsubmit="window.location.href='404.html'; return false;">
           <input type="text" id="trackIdInput" placeholder="Enter Batch ID e.g. AGRI-88210" autocomplete="off" />
           <button class="btn btn-emerald" type="submit">Inspect Telemetry →</button>
         </form>
@@ -102,7 +106,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/logoStackly.webp" alt="Stackly Agri" height="42" style="filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+          <img src="images/logoStackly.webp" alt="Stackly Agri" style="height: 38px; filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
           <p>
             Stackly is the premier real-time intelligence & tracking platform for smart farming, cold-chain transport, and fresh produce supply networks.
           </p>

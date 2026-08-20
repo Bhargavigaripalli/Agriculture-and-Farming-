@@ -108,8 +108,9 @@
       <li><a href="pricing.html">Pricing</a></li>
       <li><a class="active" href="contact.html">Contact</a></li>
     </ul>
-    <div class="nav-cta">
-      <a class="btn btn-amber" href="login.html">🔐 Portal Login</a>
+    <div class="nav-cta" style="display: flex; align-items: center; gap: 0.75rem;">
+      <a class="btn btn-ghost" href="login.html" style="padding: 0.5rem 1.1rem; border: 1px solid var(--border-color); color: #fff; text-decoration: none;">Login</a>
+      <a class="btn btn-emerald" href="get-started.html" style="padding: 0.5rem 1.1rem; text-decoration: none;">Get Started</a>
       <button class="burger" id="burger" aria-label="Toggle Menu">
         <span></span><span></span><span></span>
       </button>
@@ -125,7 +126,10 @@
     <a class="d-link" href="pricing.html">💰 Plans & Pricing</a>
     <a class="d-link active" href="contact.html">✉️ Contact Us</a>
 
-    <a class="btn btn-amber drawer-login" href="login.html">🔐 Portal Login</a>
+    <div class="drawer-actions" style="display: flex; gap: 0.75rem; margin-top: 1rem; margin-bottom: 1.5rem;">
+      <a class="btn btn-ghost" href="login.html" style="flex: 1; text-align: center; border: 1px solid var(--border-color); color: #fff; padding: 0.75rem; text-decoration: none;">Login</a>
+      <a class="btn btn-emerald" href="get-started.html" style="flex: 1; text-align: center; padding: 0.75rem; text-decoration: none;">Get Started</a>
+    </div>
   </aside>
 
   <!-- CONTACT MAIN -->
@@ -168,20 +172,20 @@
 
         <div class="c-form-box reveal right">
           <h2>Send Message to Agri Desk</h2>
-          <form onsubmit="event.preventDefault(); showToast('Thank you! Your message has been sent to our agronomist desk.'); this.reset();">
+          <form action="404.html" onsubmit="event.preventDefault(); window.location.href='404.html';">
             <div class="f-group">
               <label>Full Name</label>
-              <input type="text" placeholder="e.g. Robert Miller" required />
+              <input type="text" placeholder="e.g. Robert Miller" pattern="[A-Za-z\s]{1,16}" maxlength="16" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').slice(0, 16);" title="Only alphabets allowed (max 16 letters)" required />
             </div>
 
             <div class="f-group">
               <label>Work Email</label>
-              <input type="email" placeholder="robert@greenvalleyfarm.com" required />
+              <input type="email" placeholder="robert@greenvalley.com" required />
             </div>
 
             <div class="f-group">
               <label>Farm / Company Name</label>
-              <input type="text" placeholder="Green Valley Organic Orchards" required />
+              <input type="text" placeholder="e.g. Green Valley Farm" pattern="[A-Za-z\s]{1,20}" maxlength="20" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').slice(0, 20);" title="Only alphabets allowed (max 20 letters)" required />
             </div>
 
             <div class="f-group">
@@ -215,7 +219,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/logoStackly.webp" alt="Stackly Agri" height="42" style="filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+          <img src="images/logoStackly.webp" alt="Stackly Agri" style="height: 38px; filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
           <p>Stackly Agri empowers farmers and distributors with real-time crop telemetry and transparent cold-chain logistics.</p>
         </div>
         <div class="footer-col">

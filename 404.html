@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Stackly Agri</title>
+  <meta name="description" content="The page you are looking for does not exist on Stackly Agri Platform." />
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: #030806;
+    }
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: radial-gradient(circle at 50% 40%, rgba(16, 185, 129, 0.12) 0%, rgba(3, 8, 6, 1) 75%);
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .error-card {
+      max-width: 620px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3.5rem 2.5rem;
+      background: rgba(10, 24, 18, 0.85);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      border-radius: var(--radius-lg, 24px);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
+    }
+    .error-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: var(--radius-pill);
+      color: #f87171;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .error-code {
+      font-size: 6.5rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      letter-spacing: -3px;
+    }
+    .error-title {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .error-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+    }
+    .error-btn-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .error-btn-group .btn {
+      padding: 0.9rem 1.85rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.25s ease;
+    }
+    .btn-ghost-back {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .btn-ghost-back:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 404 MAIN CONTENT (NO NAVBAR / NO FOOTER) -->
+  <main class="error-page">
+    <div class="wrap">
+      <div class="error-card">
+        <div class="error-badge">
+          <i class="fa-solid fa-triangle-exclamation"></i> Telemetry Signal Lost
+        </div>
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-desc">
+          The requested page or telemetry batch node could not be found or has been moved. 
+          Please check the URL or navigate back to the home portal.
+        </p>
+
+        <div class="error-btn-group">
+          <button type="button" class="btn btn-ghost-back" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i> Go Back
+          </button>
+          <a href="index.html" class="btn btn-emerald">
+            <i class="fa-solid fa-house"></i> Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
