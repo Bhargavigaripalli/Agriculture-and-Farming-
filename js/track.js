@@ -18,6 +18,7 @@ const MOCK_SHIPMENTS = {
     qualityScore: '98.5% (Grade A Premium Certified)',
     driver: 'Marcus Vance · Express Logistics',
     gps: '41.8781° N, 87.6298° W (I-90 Eastbound)',
+    bgImg: 'images/service_fleet_11zon.webp',
     timeline: [
       { name: 'Harvest & Sorting', time: 'Aug 18, 06:00 AM', loc: 'Green Valley Field #4', state: 'completed' },
       { name: 'Cold Store Pre-Chill', time: 'Aug 18, 11:30 AM', loc: 'Hub #12 Storage', state: 'completed' },
@@ -41,6 +42,7 @@ const MOCK_SHIPMENTS = {
     qualityScore: '99.1% (Purity Index High)',
     driver: 'Sarah Jenkins · Freight Express',
     gps: '38.6270° N, 90.1994° W',
+    bgImg: 'images/global_11zon.webp',
     timeline: [
       { name: 'Combine Harvest', time: 'Aug 17, 07:00 AM', loc: 'Field Sector B-9', state: 'completed' },
       { name: 'Silo Dehydration', time: 'Aug 17, 02:00 PM', loc: 'SunRidge Processing', state: 'completed' },
@@ -64,6 +66,7 @@ const MOCK_SHIPMENTS = {
     qualityScore: '100% (Zero-Pesticide Clean)',
     driver: 'David Lin · Urban Agri Express',
     gps: '37.7749° N, 122.4194° W',
+    bgImg: 'images/service_drone_11zon.webp',
     timeline: [
       { name: 'Hydroponic Harvest', time: 'Aug 19, 04:00 AM', loc: 'AeroFarm Bay 3', state: 'completed' },
       { name: 'Eco-Packaging', time: 'Aug 19, 05:30 AM', loc: 'Greenhouse Hub', state: 'completed' },
@@ -204,7 +207,7 @@ function renderTrackingResult(id) {
 
     <div class="track-details-grid">
       <div class="map-view-box">
-        <div class="map-sim">
+        <div class="map-sim" style="background: linear-gradient(rgba(5, 13, 10, 0.5), rgba(5, 13, 10, 0.75)), url('${data.bgImg || 'images/service_fleet_11zon.webp'}') center/cover no-repeat;">
           <div class="map-grid-lines"></div>
           <div class="truck-marker">
             🚛 FLEET #${data.id} IN MOTION

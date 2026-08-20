@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Stackly Agri</title>
+  <meta name="description" content="Learn about Stackly Agri's mission to eliminate crop spoilage using IoT telemetry, cold-chain GPS tracking, and AI farm intelligence." />
+  <link rel="icon" type="image/webp" href="images/logoStackly.webp" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <style>
+    .about-page {
+      padding-top: 130px;
+      padding-bottom: 6rem;
+      background: #050d0a;
+    }
+    
+    /* SECTION 1: ABOUT HERO */
+    .about-hero {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 4rem;
+    }
+    .about-hero h1 {
+      font-size: 3.2rem;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .about-hero h1 span {
+      color: var(--accent-mint);
+    }
+    .about-hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      background: rgba(9, 23, 18, 0.85);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .about-stat-item h3 {
+      font-size: 2.4rem;
+      color: var(--accent-mint);
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+      font-family: 'Outfit', sans-serif;
+    }
+    .about-stat-item p {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    /* SECTION 2: MISSION & VISION */
+    .sec-mission {
+      margin-top: 5rem;
+      padding-top: 4rem;
+      border-top: 1px solid var(--border-color);
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .mission-copy h2 {
+      font-size: 2.4rem;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      line-height: 1.3;
+    }
+    .mission-copy p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .mission-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .mh-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .mh-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-mint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .mh-copy h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+    .mh-copy p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .mission-art-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 30px rgba(16, 185, 129, 0.15);
+    }
+    .mission-art-frame img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* SECTION 3: CORE PILLARS */
+    .sec-pillars {
+      margin-top: 5rem;
+      padding-top: 4rem;
+      border-top: 1px solid var(--border-color);
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .pillar-card {
+      background: rgba(9, 23, 18, 0.85);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2.2rem;
+      transition: var(--transition-fast);
+    }
+    .pillar-card:hover {
+      border-color: var(--accent-mint);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+    .pillar-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-sm);
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-mint);
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .pillar-card h3 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .pillar-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* SECTION 4: TEAM SECTION */
+    .sec-team {
+      margin-top: 5rem;
+      padding-top: 4rem;
+      border-top: 1px solid var(--border-color);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.75rem;
+      margin-top: 2.5rem;
+    }
+    .team-card {
+      background: rgba(9, 23, 18, 0.85);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      transition: var(--transition-fast);
+    }
+    .team-card:hover {
+      border-color: var(--accent-mint);
+      transform: translateY(-4px);
+    }
+    .team-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      border: 2px solid var(--accent-mint);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+    }
+    .team-card h4 {
+      color: #fff;
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+    }
+    .team-role {
+      color: var(--accent-mint);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .team-bio {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* RESPONSIVE MEDIA QUERIES */
+    @media (max-width: 1024px) {
+      .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .mission-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .about-hero h1 { font-size: 2.1rem; word-break: break-word; }
+      .about-hero p { font-size: 0.98rem; }
+      .about-stats-grid { grid-template-columns: 1fr; padding: 1.25rem; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .mission-copy h2 { font-size: 1.7rem; word-break: break-word; }
+      .mission-art-frame img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="images/logoStackly.webp" alt="Stackly Agri Logo" height="45" style="filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="about.html">About Us</a></li>
+      <li><a href="track.html">Track Harvest</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta" style="display: flex; align-items: center; gap: 0.75rem;">
+      <a class="btn btn-ghost" href="login.html" style="padding: 0.5rem 1.1rem; border: 1px solid var(--border-color); color: #fff; text-decoration: none;">Login</a>
+      <a class="btn btn-emerald" href="get-started.html" style="padding: 0.5rem 1.1rem; text-decoration: none;">Get Started</a>
+      <button class="burger" id="burger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE SCRIM & DRAWER -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer">
+    <a class="d-link" href="index.html">🏠 Home</a>
+    <a class="d-link active" href="about.html">ℹ️ About Us</a>
+    <a class="d-link" href="track.html">📍 Track Harvest</a>
+    <a class="d-link" href="services.html">🌱 Agri Services</a>
+    <a class="d-link" href="pricing.html">💰 Plans & Pricing</a>
+    <a class="d-link" href="contact.html">✉️ Contact Us</a>
+
+    <div class="drawer-actions" style="display: flex; gap: 0.75rem; margin-top: 1rem; margin-bottom: 1.5rem;">
+      <a class="btn btn-ghost" href="login.html" style="flex: 1; text-align: center; border: 1px solid var(--border-color); color: #fff; padding: 0.75rem; text-decoration: none;">Login</a>
+      <a class="btn btn-emerald" href="get-started.html" style="flex: 1; text-align: center; padding: 0.75rem; text-decoration: none;">Get Started</a>
+    </div>
+  </aside>
+
+  <!-- ABOUT MAIN CONTENT -->
+  <main class="about-page">
+    <div class="wrap">
+      
+      <!-- SECTION 1: ABOUT HERO -->
+      <section class="about-hero reveal zoom">
+        <span class="eyebrow pill-emerald">Pioneering Smart Agriculture</span>
+        <h1>Engineered to Eliminate <span>Crop Spoilage</span> Worldwide.</h1>
+        <p>
+          Stackly Agri connects local farms, wireless soil telemetry probes, cold-chain freight fleets, and wholesale produce markets into one unified, real-time intelligence ecosystem.
+        </p>
+
+        <div class="about-stats-grid">
+          <div class="about-stat-item">
+            <h3>14.8M</h3>
+            <p>Produce Kg Tracked</p>
+          </div>
+          <div class="about-stat-item">
+            <h3>99.8%</h3>
+            <p>Freshness Guarantee</p>
+          </div>
+          <div class="about-stat-item">
+            <h3>1,280</h3>
+            <p>Connected Farms</p>
+          </div>
+          <div class="about-stat-item">
+            <h3>94 Hubs</h3>
+            <p>Cold-Chain Corridors</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: OUR MISSION & VISION -->
+      <section class="sec-mission">
+        <div class="mission-grid">
+          
+          <div class="mission-copy reveal left">
+            <span class="eyebrow pill-emerald">Our Core Mission</span>
+            <h2>Bridging Ground Sensors with Global Logistics</h2>
+            <p>
+              Over 30% of global agricultural harvests are lost during transport due to unmonitored microclimate shifts, cold-chain reefer failures, and poor visibility.
+            </p>
+            <p>
+              At Stackly Agri, our mission is to empower growers and distributors with continuous, tamper-proof IoT telemetry data—ensuring every harvest reaches table markets at peak quality.
+            </p>
+
+            <div class="mission-highlights">
+              <div class="mh-item">
+                <div class="mh-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="mh-copy">
+                  <h4>Real-Time Soil & Canopy Intelligence</h4>
+                  <p>Multi-depth moisture & NPK probes streaming data every 10 seconds.</p>
+                </div>
+              </div>
+
+              <div class="mh-item">
+                <div class="mh-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="mh-copy">
+                  <h4>Zero-Break Cold Chain Tracking</h4>
+                  <p>Active GPS & thermal sensors inside refrigerated transport trucks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-art-frame reveal right">
+            <img src="images/global_11zon.webp" alt="Agricultural Supply Chain Logistics" />
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 3: KEY TECHNOLOGY PILLARS -->
+      <section class="sec-pillars">
+        <div class="head-c reveal">
+          <span class="eyebrow pill-emerald">Our Technology Stack</span>
+          <h2>Built on Three Uncompromising <span>Agritech Pillars</span></h2>
+          <p>Discover how hardware telemetry, satellite diagnostics, and blockchain certificates work seamlessly together.</p>
+        </div>
+
+        <div class="pillars-grid">
+          
+          <div class="pillar-card reveal left">
+            <div class="pillar-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>1. Ground IoT Telemetry</h3>
+            <p>Low-power wireless sensors log soil pH, moisture matrix potential, and ambient frost warnings directly to the cloud dashboard.</p>
+          </div>
+
+          <div class="pillar-card reveal zoom">
+            <div class="pillar-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <h3>2. Active Reefer Fleet GPS</h3>
+            <p>Continuous thermal logging inside cargo containers ensures cargo stays within exact temperature thresholds during transit.</p>
+          </div>
+
+          <div class="pillar-card reveal right">
+            <div class="pillar-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+            <h3>3. Spectral Drone & Satellite</h3>
+            <p>High-resolution NDVI canopy mapping detects crop stress, water deficit, and pest hotspots before visual symptoms show.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 4: LEADERSHIP TEAM -->
+      <section class="sec-team">
+        <div class="head-c reveal">
+          <span class="eyebrow pill-emerald">Agritech Experts</span>
+          <h2>Meet the Team <span>Pioneering Stackly</span></h2>
+          <p>Driven by agronomists, software architects, and cold-chain logistics veterans.</p>
+        </div>
+
+        <div class="team-grid">
+          
+          <div class="team-card reveal left">
+            <div class="team-avatar">RM</div>
+            <h4>Dr. Robert Miller</h4>
+            <span class="team-role">Founder & Chief Agronomist</span>
+            <p class="team-bio">15+ years researching soil microclimates and precision hydroponic crop yields.</p>
+          </div>
+
+          <div class="team-card reveal zoom">
+            <div class="team-avatar">MV</div>
+            <h4>Marcus Vance</h4>
+            <span class="team-role">VP of Cold-Chain Fleet</span>
+            <p class="team-bio">Former logistics director managing 500+ thermal reefer transit corridors.</p>
+          </div>
+
+          <div class="team-card reveal zoom">
+            <div class="team-avatar">SJ</div>
+            <h4>Sarah Jenkins</h4>
+            <span class="team-role">Head of Quality Compliance</span>
+            <p class="team-bio">Certified organic residue inspector and produce freshness analyst.</p>
+          </div>
+
+          <div class="team-card reveal right">
+            <div class="team-avatar">DL</div>
+            <h4>David Lin</h4>
+            <span class="team-role">Lead IoT Systems Architect</span>
+            <p class="team-bio">Specialist in ultra-low power wireless sensor networks and satellite telematics.</p>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER SECTION (REFERENCE MATCHING DESIGN) -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        
+        <!-- COLUMN 1: BRAND LOGO & TAGLINE & SOCIAL ICONS -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img src="images/logoStackly.webp" alt="Stackly Agri" style="height: 38px; filter: invert(58%) sepia(72%) saturate(400%) hue-rotate(115deg) brightness(95%) contrast(90%);" />
+          </a>
+          <p>
+            Pioneering smart agriculture, soil microclimate telemetry, cold-chain freight tracking, and farm-to-table crop transparency.
+          </p>
+          <a href="404.html" class="footer-discover-link">DISCOVER OUR STORY <i class="fa-solid fa-arrow-right"></i></a>
+          
+          <div class="social-links" style="margin-top: 1.25rem;">
+            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- COLUMN 2: QUICK LINKS -->
+        <div class="footer-col">
+          <h4>QUICK LINKS</h4>
+          <ul class="footer-arrow-list">
+            <li><a href="index.html"><span class="arrow-icon">›</span> Home</a></li>
+            <li><a href="about.html"><span class="arrow-icon">›</span> About Us</a></li>
+            <li><a href="track.html"><span class="arrow-icon">›</span> Track Harvest</a></li>
+            <li><a href="services.html"><span class="arrow-icon">›</span> Services</a></li>
+            <li><a href="pricing.html"><span class="arrow-icon">›</span> Pricing</a></li>
+            <li><a href="contact.html"><span class="arrow-icon">›</span> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 3: OUR SERVICES -->
+        <div class="footer-col">
+          <h4>OUR SERVICES</h4>
+          <ul class="footer-arrow-list">
+            <li><a href="404.html"><span class="arrow-icon">›</span> Soil IoT Telemetry</a></li>
+            <li><a href="404.html"><span class="arrow-icon">›</span> Cold-Chain Fleet GPS</a></li>
+            <li><a href="404.html"><span class="arrow-icon">›</span> Drone Crop Diagnostics</a></li>
+            <li><a href="404.html"><span class="arrow-icon">›</span> Organic Blockchain</a></li>
+            <li><a href="404.html"><span class="arrow-icon">›</span> Marketplace Connect</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 4: CONTACT US -->
+        <div class="footer-col">
+          <h4>CONTACT US</h4>
+          <div class="footer-contact-blocks">
+            <div class="footer-contact-item">
+              <div class="fc-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <small>CALL US</small>
+                <a href="404.html" class="fc-val">+91 98765 43210</a>
+              </div>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="fc-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <small>EMAIL</small>
+                <a href="404.html" class="fc-val">hello@stacklyagri.com</a>
+              </div>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="fc-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <small>AGRI HQ</small>
+                <a href="404.html" class="fc-val">Chennai, Tamil Nadu, India</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER BOTTOM -->
+      <div class="footer-bottom">
+        <div>© 2026 Stackly Agri. All Rights Reserved.</div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+</body>
+</html>

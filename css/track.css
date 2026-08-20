@@ -295,7 +295,7 @@
 .map-sim {
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 60% 40%, #0d281e 0%, #040e0a 100%);
+  background: linear-gradient(rgba(5, 13, 10, 0.5), rgba(5, 13, 10, 0.75)), url('../images/service_fleet_11zon.webp') center/cover no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -303,8 +303,8 @@
 .map-grid-lines {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(52, 211, 153, 0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(52, 211, 153, 0.05) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(52, 211, 153, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(52, 211, 153, 0.1) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
